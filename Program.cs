@@ -8,8 +8,7 @@ namespace MDB_Changestream
     { 
         private static MongoClient _client;
         private static Object lockobj;
-        private static string connString = "mongodb+srv://MNG1:MNG001@mission24.s2ml3.mongodb.net/"
-                                        +"?retryWrites=true&w=majority";
+        private static string connString = "<connection string>";
         public static MongoClient getMongoClient()
         {
             if (_client == null)
@@ -45,7 +44,7 @@ namespace MDB_Changestream
         static void Main(string[] args)
         {
             var dbclient = MongoClientFactory.getMongoClient();
-            var database = dbclient.GetDatabase("test");
+            var database = dbclient.GetDatabase("<database name>");
 
 
             //using (var cursor = database.Watch())
